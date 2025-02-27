@@ -1,14 +1,20 @@
 import express from 'express';
 import { ApolloServer } from "apollo-server-express";
 import cors from 'cors';
-import typeDefs from './schemas/QuizSchema.js'; // Correct import path
-import resolvers from './resolvers/quizResolvers.js'; // Correct import path
-import connectDB from './config/db.js'; // Ensure to add .js extension
+import typeDefs from './schemas/QuizSchema.js';
+import resolvers from './resolvers/quizResolvers.js';
+import connectDB from './config/db.js';
 import dotenv from 'dotenv';
 
 dotenv.config();
 
+const cors = require('cors');
 const app = express();
+
+app.use(cors({
+    origin: 'https://quiz-game-ykwz.onrender.com'
+}));
+
 const server = new ApolloServer({ typeDefs, resolvers });
 
 const serverStart = async () => {
