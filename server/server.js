@@ -11,8 +11,9 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-    origin: 'https://quiz-game-six-gilt.vercel.app/'
+    origin: ['https://quiz-game-ykwz.onrender.com', 'https://quiz-game-six-gilt.vercel.app'] // Allow requests from both URLs
 }));
+
 
 const server = new ApolloServer({ typeDefs, resolvers });
 
