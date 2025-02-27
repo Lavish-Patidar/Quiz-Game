@@ -1,8 +1,7 @@
 import express from 'express';
 import { ApolloServer } from "apollo-server-express";
 import cors from 'cors';
-import typeDefs from './schemas/quizSchema.js'; // Correct import path
-
+import typeDefs from './schemas/QuizSchema.js'; // Correct import path
 import resolvers from './resolvers/quizResolvers.js'; // Correct import path
 import connectDB from './config/db.js'; // Ensure to add .js extension
 import dotenv from 'dotenv';
